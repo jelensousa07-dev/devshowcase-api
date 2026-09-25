@@ -29,8 +29,7 @@ class ProjectModel(Base):
     description = Column(Text, nullable=True)
     project_url = Column(String, nullable=True)
     upvotes = Column(Integer, default=0)
-average_rating = Column(Float, default=0.0)
-    
+average_rating = Column(Float, default=0.0) 
     profile_id = Column(Integer, ForeignKey("profiles.id"), nullable=False)
 
     # Relacionamentos
