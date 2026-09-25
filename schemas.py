@@ -48,12 +48,14 @@ class ProjectResponse(ProjectBase):
 
     class Config:
         from_attributes = True
-
+upvotes: int
+average_rating: float
 
 # --- SCHEMAS PARA FEEDBACK ---
 class FeedbackBase(BaseModel):
     comment: str
     author: str
+    rating: int
 
 class FeedbackCreate(FeedbackBase):
     project_id: int
@@ -61,6 +63,7 @@ class FeedbackCreate(FeedbackBase):
 class FeedbackResponse(FeedbackBase):
     id: int
     project_id: int
+    rating: int
 
     class Config:
         from_attributes = True

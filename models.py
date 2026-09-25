@@ -28,6 +28,8 @@ class ProjectModel(Base):
     title = Column(String, nullable=False)
     description = Column(Text, nullable=True)
     project_url = Column(String, nullable=True)
+    upvotes = Column(Integer, default=0)
+average_rating = Column(Float, default=0.0)
     
     profile_id = Column(Integer, ForeignKey("profiles.id"), nullable=False)
 
@@ -50,6 +52,7 @@ class FeedbackModel(Base):
     id = Column(Integer, primary_key=True, index=True)
     comment = Column(Text, nullable=False)
     author = Column(String, nullable=False)
+    rating = Column(Integer, nullable=False)
     
     project_id = Column(Integer, ForeignKey("projects.id"), nullable=False)
 
